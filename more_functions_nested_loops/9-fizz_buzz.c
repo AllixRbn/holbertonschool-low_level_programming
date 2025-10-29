@@ -1,5 +1,5 @@
 #include "main.h"
-#include "_putchar.c"
+#include <stdio.h>
 
 /**
  * main - prints the numbers from 1 to 100
@@ -16,36 +16,18 @@ int main(void)
 	{
 		if (num % 3 == 0 && num % 5 == 0)
 		{
-			_putchar ('F');
-			_putchar ('i');
-			_putchar ('z');
-			_putchar ('z');
-			_putchar ('B');
-			_putchar ('u');
-			_putchar ('z');
-			_putchar ('z');
-			_putchar (' ');
+			printf("FizzBuzz ");
 
 		} else if (num % 3 == 0)
 		{
-			_putchar ('F');
-			_putchar ('i');
-			_putchar ('z');
-			_putchar ('z');
-			_putchar (' ');
+			printf("Fizz ");
 
 		} else if (num % 5 == 0)
 		{
-			_putchar ('B');
-			_putchar ('u');
-			_putchar ('z');
-			_putchar ('z');
-			_putchar (' ');
+			printf("Buzz ");
 		} else
 		{
-			_putchar (num / 10 + '0');
-			_putchar (num % 10 + '0');
-			_putchar (' ');
+			printf("%d ", num);
 		}
 	}
 	return (0);
