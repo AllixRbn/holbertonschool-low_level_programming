@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_putchar.c"
 
 /**
  * main - prints the numbers from 1 to 100
