@@ -1,48 +1,36 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * string_nconcat - Concatenates two strings, using at most n bytes from s2
- * @s1: The first string
- * @s2: The second string
- * @n: The maximum number of bytes to use from s2
+ * _strdup - duplicates a string
+ * @str: the string to duplicate
  *
- * Return: A pointer to the newly allocated concatenated string
- * If memory allocation fails, the function returns NULL
+ * Return: pointer to the duplicated string, or NULL if it fails
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *_strdup(char *str)
 {
-	unsigned int len1 = 0, len2 = 0, i, j;
-	char *concat;
+	int i, len;
+	char *strstr;
 
-	while (s1 && s1[len1])
-	{
-		len1++;
-	}
-	while (s2 && s2[len2])
-	{
-		len2++;
-	}
-
-	if (n < len2)
-	{
-		len2 = n;
-	}
-
-	concat = malloc_checked(len1 + len2 + 1);
-	if (!concat)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
+	len = 0;
 
-	for (i = 0; i < len1; i++)
+	while (str[len] != '\0')
 	{
-		concat[i] = s1[i];
+		len++;
 	}
-	for (j = 0; j < len2; j++)
-	{
-		concat[i + j] = s2[j];
-	}
-	concat[i + j] = '\0';
+	strstr = malloc((len + 1) * sizeof(char));
 
-	return (concat);
+	if (strstr == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < len; i++)
+	{
+		strstr[i] = str[i];
+	}
+	strstr[len] = '\0';
+	return (strstr);
 }
